@@ -84,6 +84,68 @@ The AirBnB Clone project uses a variety of technologies to ensure robustness, sc
 ### CI/CD Pipelines
 - **Purpose**: Continuous Integration (CI) and Continuous Deployment (CD) pipelines are used to automate the process of testing and deploying code changes. This ensures that code is always tested before being deployed, improving code quality and reducing the risk of bugs.
 
+## Database Design
+
+The database for the AirBnB Clone project is structured to handle key entities such as Users, Properties, Bookings, Reviews, and Payments. Below is an overview of each entity and their key fields:
+
+### Users
+- **Fields**:
+  - `id`: A unique identifier for the user.
+  - `email`: User's email address, used for authentication.
+  - `password`: Encrypted password for authentication.
+  - `first_name`: User's first name.
+  - `last_name`: User's last name.
+  - `date_joined`: The date the user registered.
+- **Relationships**:
+  - A user can have multiple properties.
+  - A user can make multiple bookings.
+
+### Properties
+- **Fields**:
+  - `id`: A unique identifier for the property.
+  - `user_id`: A foreign key linking the property to a specific user (host).
+  - `title`: Title of the property listing.
+  - `description`: Detailed description of the property.
+  - `price_per_night`: The cost for renting the property per night.
+- **Relationships**:
+  - Each property belongs to a single user (host).
+  - A property can have multiple bookings and reviews.
+
+### Bookings
+- **Fields**:
+  - `id`: A unique identifier for the booking.
+  - `user_id`: A foreign key linking the booking to a specific user (guest).
+  - `property_id`: A foreign key linking the booking to a specific property.
+  - `check_in`: The check-in date for the booking.
+  - `check_out`: The check-out date for the booking.
+  - `total_price`: Total cost of the booking.
+- **Relationships**:
+  - A booking belongs to one user (guest) and one property.
+  - A booking is associated with a payment (via the payment ID).
+
+### Reviews
+- **Fields**:
+  - `id`: A unique identifier for the review.
+  - `user_id`: A foreign key linking the review to a specific user (guest).
+  - `property_id`: A foreign key linking the review to a specific property.
+  - `rating`: Rating of the property (usually 1-5).
+  - `comment`: A text comment about the property.
+- **Relationships**:
+  - A review belongs to one user and one property.
+  - A user can leave multiple reviews.
+
+### Payments
+- **Fields**:
+  - `id`: A unique identifier for the payment.
+  - `booking_id`: A foreign key linking the payment to a specific booking.
+  - `payment_method`: The method used for payment (e.g., credit card, PayPal).
+  - `amount`: The total payment amount.
+  - `payment_date`: The date the payment was made.
+- **Relationships**:
+  - A payment is associated with one booking.
+  - A booking can only have one payment.
+
+These entities are designed to work together to ensure that users can register, list properties, make bookings, leave reviews, and process payments within the system.
 
 
 ## License
