@@ -56,6 +56,35 @@ The AirBnB Clone project involves collaboration across multiple roles, each with
   - Coordinate with the development team to ensure the project stays on track and meets business requirements.
   - Communicate with stakeholders and manage feedback to continuously improve the product.
 
+## Technology Stack
+
+The AirBnB Clone project uses a variety of technologies to ensure robustness, scalability, and performance. Below is an overview of the key technologies used:
+
+### Django
+- **Purpose**: Django is a high-level Python web framework that is used to build the core backend of the AirBnB Clone. It simplifies the development process by providing built-in tools for building secure, maintainable web applications. In this project, Django is used to create the RESTful API.
+
+### Django REST Framework
+- **Purpose**: Django REST Framework (DRF) is a toolkit for building Web APIs in Django. It provides features like serializers, authentication, and view sets, which are crucial for creating APIs for user management, property listings, bookings, payments, and reviews.
+
+### PostgreSQL
+- **Purpose**: PostgreSQL is a powerful, open-source relational database management system used to store and manage all the data for the AirBnB Clone project. It provides advanced features like transactions, indexing, and foreign keys to ensure data integrity and fast query performance.
+
+### GraphQL
+- **Purpose**: GraphQL is a flexible query language used to interact with the backend data. It allows clients to request exactly the data they need and nothing more. In this project, GraphQL is integrated to enable efficient and customizable data fetching, reducing over-fetching and under-fetching of data.
+
+### Celery
+- **Purpose**: Celery is an asynchronous task queue that is used to handle background tasks in the project. It is used for tasks like sending notifications, processing payments, and handling other long-running processes without blocking the main application.
+
+### Redis
+- **Purpose**: Redis is an in-memory data store used for caching and session management in this project. It helps improve the performance of the application by caching frequently accessed data and reducing the load on the PostgreSQL database.
+
+### Docker
+- **Purpose**: Docker is a containerization tool that is used to create a consistent development and deployment environment. It allows the backend application and its dependencies to run seamlessly across different environments, from development to production.
+
+### CI/CD Pipelines
+- **Purpose**: Continuous Integration (CI) and Continuous Deployment (CD) pipelines are used to automate the process of testing and deploying code changes. This ensures that code is always tested before being deployed, improving code quality and reducing the risk of bugs.
+
+
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
