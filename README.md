@@ -169,6 +169,35 @@ The AirBnB Clone project includes several core features that are essential for c
 ### Database Optimization
 - **Description**: This feature optimizes data retrieval and storage by implementing database indexing and caching strategies. It enhances the performance of the backend, ensuring that the platform remains responsive even with a large number of users and property listings.
 
+## API Security
+
+API security is critical to ensure that the AirBnB Clone backend is protected from unauthorized access, data breaches, and malicious activities. Below are the key security measures that will be implemented:
+
+### Authentication
+- **Explanation**: Authentication ensures that users are who they claim to be. In this project, user authentication will be handled via JWT (JSON Web Tokens) or session-based authentication. Each API request will require the user to present a valid token, ensuring that only authenticated users can interact with protected resources (e.g., booking, property management, etc.).
+- **Why It's Crucial**: Authentication is essential to protect user data and ensure that only authorized users can perform sensitive operations such as creating bookings, managing properties, and posting reviews.
+
+### Authorization
+- **Explanation**: Authorization controls what authenticated users are allowed to do. For example, a regular user may be allowed to view properties and make bookings, but only the property owner (host) can create or edit property listings. This will be enforced using role-based access control (RBAC).
+- **Why It's Crucial**: Authorization prevents unauthorized actions and protects sensitive data, such as preventing one user from modifying or deleting another user's property listings or bookings.
+
+### Rate Limiting
+- **Explanation**: Rate limiting is implemented to prevent abuse of the APIs by restricting the number of requests a user can make within a given time period. This helps mitigate brute force attacks and ensures the backend remains responsive under heavy traffic.
+- **Why It's Crucial**: Rate limiting protects the system from denial-of-service (DoS) attacks and ensures fair usage of resources, safeguarding both users and the application from malicious activity.
+
+### Data Encryption
+- **Explanation**: Sensitive data, such as user passwords and payment details, will be encrypted both in transit (via HTTPS) and at rest (in the database). 
+- **Why It's Crucial**: Encryption ensures that user data is protected from interception or unauthorized access, especially in the case of payment transactions and personal information.
+
+### Secure Payment Handling
+- **Explanation**: The payment system will integrate with secure third-party payment processors (e.g., Stripe, PayPal) to handle transactions. Payment data will not be stored on the backend to reduce the risk of data breaches.
+- **Why It's Crucial**: Securing payments is essential to prevent fraud and protect users' financial information. It also ensures that payments are processed in a secure environment, maintaining trust in the platform.
+
+### Input Validation and Sanitization
+- **Explanation**: All user inputs (e.g., forms, search queries, etc.) will be validated and sanitized to prevent common vulnerabilities like SQL injection, XSS (Cross-site Scripting), and other malicious input-based attacks.
+- **Why It's Crucial**: Input validation ensures that only safe, expected data is processed, preventing attackers from exploiting vulnerabilities in the application to inject malicious code.
+
+
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
